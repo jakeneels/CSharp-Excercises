@@ -1,3 +1,4 @@
+<<<<<<< HEAD
     
 Introduction to Tools LO line 260
 -------------------------------
@@ -11,6 +12,11 @@ csharp-helloworld folder represents a simplified C# project. (The layout of an
 actual C# project will be covered in later lectures.) For now, the reduced 
 structure provides an opportunity to navigate between folders, and to work with
 files as you would in an actual C# project, but cleared of much of the 
+=======
+
+Introduction to Tools Exercises
+-------------------------------ed of much of the 
+>>>>>>> 4081eaa36d60ab727b8b79c893431f13612df834
 clutter found in real projects.
 
 
