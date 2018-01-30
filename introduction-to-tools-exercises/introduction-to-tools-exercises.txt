@@ -1,5 +1,5 @@
-
-Introduction to Tools Exercises
+    
+Introduction to Tools LO line 260
 -------------------------------
 
 The following exercises cover Git, and several Unix commands typically used
@@ -19,7 +19,7 @@ clutter found in real projects.
     directory to the exercise folder.
 ----
 
-$ cd ~/exercises/m1-w1d1-intro-to-tools-exercises/csharp-helloworld
+$ cd /exercises/intro-to-tools-exercises/csharp-helloworld
 
 Note, do not enter the beginning "$" character. It represents the prompt for 
 the command line. This convention is commonly used to visually seperate the 
@@ -30,7 +30,7 @@ actual command from other text in Unix documentation.
 2.  What does the ~ (tilde) character in the above command to change directory 
     refer to?
 ----
-
+	the tilde in change directory sends you back to the home directory on windows that is c/users/yourUsername
 
 ----
 3.  A good habit to develop, especially while you're developing your skills on 
@@ -39,7 +39,8 @@ actual command from other text in Unix documentation.
 ----
 
 $ pwd
-<type or copy-paste the result here>
+	/c/Users/Jacob Neels/work/jacobneels-c-exercises
+
 
 The present working directory displayed should match the directory you changed 
 to in Exercise 1.  Note, the two may not match at the very beginning if you
@@ -54,8 +55,15 @@ changes directory, and the "pwd" command reflects this.
     "long format" flags for the "ls" command.
 ----
 
-$ ls -la
-<type or copy-paste the result here>
+    $ ls -la
+    total 18
+    drwxr-xr-x 1 Jacob Neels 197121   0 Jan 29 16:22 ./
+    drwxr-xr-x 1 Jacob Neels 197121   0 Jan 29 16:06 ../
+    drwxr-xr-x 1 Jacob Neels 197121   0 Jan 29 16:22 .git/
+-rw-r--r-- 1 Jacob Neels 197121 263 Jan 29 16:06 .gitignore
+drwxr-xr-x 1 Jacob Neels 197121   0 Jan 29 16:22 introduction-to-tools-exercises/
+-rw-r--r-- 1 Jacob Neels 197121 139 Jan 29 16:22 README.md
+
 
 
 ----
@@ -63,14 +71,15 @@ $ ls -la
     Exercise 4 represent?
 ----
 
-<type or copy-paste your answer here>
+    the . represents the current folder and the .. represents the parent folder
 
 ----
 6.  What are the names of the files, including any dot-files, displayed in the
     directory listing in Exercise 4?
 ----
 
-<type or copy-paste your answer here>
+    .gitignore
+    readme.MD
 
 
 ----
@@ -78,7 +87,10 @@ $ ls -la
     the directory listing in Exercise 4?
 ----
 
-<type or copy-paste your answer here>
+    . (current folder) is jacobneels-c-exercises
+    ..(parent folder) is work
+    .git
+    introduction-to-tools-excercises
 
 
 ----
@@ -124,13 +136,32 @@ You are encouraged to make "less" part of your standard command line toolkit.
 Did you remember to save "introduction-to-tools-exercise.txt"?
 
 $ git status
-<type or copy-paste the result here>
+On branch master
+Your branch is ahead of 'origin/master' by 4 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   ../introduction-to-tools-exercises.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
 
 $ git add .
-<type or copy-paste the result here>
+blank
 
 $ git commit -m "Good stopping point"
-<type or copy-paste the result here>
+On branch master
+Your branch is ahead of 'origin/master' by 4 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+        modified:   ../introduction-to-tools-exercises.txt
+
+no changes added to commit
+
 
 Note, you do not need to push this commit up to BitBucket. The typical Git 
 workflow is to make many small commits to your local repo, with pushes up to 
@@ -143,8 +174,8 @@ BitBucket when a feature, fix, or in this case, assignment is finished.
 ----
 
 $ cd Helloworld
-$ <enter command to display present working directory>
-<type or copy-paste your present working directory here>
+$ pwd
+/c/Users/Jacob Neels/work/jacobneels-c-exercises/introduction-to-tools-exercises/csharp-helloworld/helloworld
 
 
 ----
@@ -152,7 +183,7 @@ $ <enter command to display present working directory>
     path?
 ----
 
-<type your answer here>
+relative
 
 
 ----
@@ -160,8 +191,14 @@ $ <enter command to display present working directory>
     your present working directory.
 ----
 
-$ <enter command to list all files and folders including dot-files and dot-folders>
-<type or copy-paste the result here>
+$ ls -la
+total 10
+drwxr-xr-x 1 Jacob Neels 197121    0 Jan 29 16:22 ./
+drwxr-xr-x 1 Jacob Neels 197121    0 Jan 29 16:22 ../
+-rw-r--r-- 1 Jacob Neels 197121  189 Jan 29 16:22 App.config
+-rw-r--r-- 1 Jacob Neels 197121 2680 Jan 29 16:22 Helloworld.csproj
+-rw-r--r-- 1 Jacob Neels 197121  266 Jan 29 16:22 Program.cs
+drwxr-xr-x 1 Jacob Neels 197121    0 Jan 29 16:22 Properties/
 
 
 ----
@@ -175,8 +212,8 @@ $ cp Program.cs Helloworld.cs.backup
 The "cp" parameters are the name of the source file followed by the name of the 
 destination file. 
 
-$ <enter command to list all files and folders in order to confirm the creation of the backup file>
-<type or copy-paste the result here>
+$ ls
+App.config  Helloworld.csproj  Program.cs  Program.cs.backup  Properties/
 
 
 ----    
@@ -189,17 +226,36 @@ $ mv Program.cs.backup Program.cs.copy
 The "mv" parameters are the existing name of the file followed by the new name 
 of the file. 
 
-$ <enter command to list all files and folders in order to confirm the renaming of the file>
-<type or copy-paste the result here>
-
+$ls -la
+ total 11
+drwxr-xr-x 1 Jacob Neels 197121    0 Jan 29 16:59 ./
+drwxr-xr-x 1 Jacob Neels 197121    0 Jan 29 16:22 ../
+-rw-r--r-- 1 Jacob Neels 197121  189 Jan 29 16:22 App.config
+-rw-r--r-- 1 Jacob Neels 197121 2680 Jan 29 16:22 Helloworld.csproj
+-rw-r--r-- 1 Jacob Neels 197121  266 Jan 29 16:22 Program.cs
+-rw-r--r-- 1 Jacob Neels 197121  266 Jan 29 16:59 Program.cs.copy
+drwxr-xr-x 1 Jacob Neels 197121    0 Jan 29 16:22 Properties/
 
 ----
 15. Let's call this a "feature completion" point in the exercises, and not only
     checkin to the local repository, but also push it up to BitBucket. 
 ----
 
-$ <enter the Git command to display status>
-<type or copy-paste the result here>
+$ $ git status
+On branch master
+Your branch is ahead of 'origin/master' by 4 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   ../../introduction-to-tools-exercises.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        ../Helloworld/Program.cs.copy
+
 
 $ <enter the Git command to "stage" all changes>
 <type or copy-paste the result here>
