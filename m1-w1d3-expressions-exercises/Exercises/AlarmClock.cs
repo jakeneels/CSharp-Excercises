@@ -20,6 +20,19 @@ namespace Exercises
          */
         public string AlarmClock(int day, bool vacation)
         {
+            bool isWeekend = (day > 6) || (day < 1);
+            bool isWeekday = !isWeekend;
+            bool onVacation = vacation;
+
+            if (isWeekend && !onVacation)
+            {
+
+            }
+            else if (isWeekday && onVacation)
+            {
+
+            }
+
             return "";
         }
 
