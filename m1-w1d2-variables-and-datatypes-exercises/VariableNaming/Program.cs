@@ -14,7 +14,12 @@ namespace VariableNaming
             1. 4 birds are sitting on a branch. 1 flies away. How many birds are left on
             the branch? 
             */
+<<<<<<< HEAD
             int birds = 4 - 1;
+=======
+            byte birds = 4 - 1;
+
+>>>>>>> f8cc5804aa914d96296844662f735dbd39e2c82b
             /* 
             2. There are 6 birds and 3 nests. How many more birds are there than
             nests? 
