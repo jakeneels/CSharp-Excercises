@@ -11,15 +11,30 @@ namespace Exercises
 
 
         /*
-         Your cell phone rings. Return true if you should answer it. Normally you answer, except in the morning 
-         you only answer if it is your mom calling. In all cases, if you are asleep, you do not answer.
+         Your cell phone rings. Return true if you should answer it. 
+         1. not in the morning 
+         2. if you are asleep, you do not answer.
+                  you only answer if it is your mom calling. In all cases, 
+
          answerCell(false, false, false) → true
          answerCell(false, false, true) → false
          answerCell(true, false, false) → false
          */
         public bool AnswerCell(bool isMorning, bool isMom, bool isAsleep)
         {
-            return false;
+
+            bool answer = true;
+
+            if (isAsleep)
+            {
+                answer = false;
+            }
+            else if (isMorning && !isMom) 
+            {
+                answer = false;
+            }
+           
+            return answer;
         }
     }
 }

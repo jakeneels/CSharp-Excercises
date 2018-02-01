@@ -16,7 +16,12 @@ namespace Exercises
          */
         public bool In1020(int a, int b)
         {
-            return false;
+            bool result = false;
+            if(Enumerable.Range(10,20).Contains(a) || Enumerable.Range(10,20).Contains(b))
+            {
+                result = true;
+            }
+            return result;
         }
 
     }

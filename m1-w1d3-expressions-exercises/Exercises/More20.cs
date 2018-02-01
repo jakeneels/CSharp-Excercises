@@ -9,7 +9,8 @@ namespace Exercises
     public partial class Exercises
     {
         /*
-         Return true if the given non-negative number is 1 or 2 more than a multiple of 20. 
+         Return true if the given non-negative number is 
+         1 or 2 more than a multiple of 20. 
          (Hint: Think "mod".)
          more20(20) → false
          more20(21) → true
@@ -17,7 +18,16 @@ namespace Exercises
          */
         public bool More20(int n)
         {
-            return false;
+            bool result = false;
+            if (n >= 0)
+            {
+                if ((n - 1) % 20 == 0 || (n - 2) % 20 == 0)
+                {
+                    result = true;
+                }
+            }
+
+            return result;
         }
 
     }

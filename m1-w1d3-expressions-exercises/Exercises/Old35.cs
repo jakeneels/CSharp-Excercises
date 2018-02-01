@@ -9,7 +9,8 @@ namespace Exercises
     public partial class Exercises
     {
         /*
-         Return true if the given non-negative number is a multiple of 3 or 5, but not both. 
+         Return true if the given non-negative number 
+         is a multiple of 3 or 5, but not both. 
          (Hint: Think "mod".)
          old35(3) → true
          old35(10) → true
@@ -17,7 +18,13 @@ namespace Exercises
          */
         public bool Old35(int n)
         {
-            return false;
+            bool result = false;
+
+            if(n % 3 != 0 ^ n % 5 != 0)
+            {
+                result = true;
+            }
+            return result;
         }
 
     }

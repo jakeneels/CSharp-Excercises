@@ -9,7 +9,9 @@ namespace Exercises
     public partial class Exercises
     {
         /*
-         Given an int n, return the absolute difference between n and 21, except return double the absolute 
+         1.Given an int n, return the absolute difference between n and 21, 
+         except 
+         2.return double the absolute 
          difference if n is over 21.
          diff21(19) → 2
          diff21(10) → 11
@@ -17,7 +19,16 @@ namespace Exercises
          */
         public int Diff21(int n)
         {
-            return 0;
+            int answer = 0;
+            if(n > 21)
+            {
+                answer = 2*(n - 21);
+            }
+            else
+            {
+                answer = (21 - n);
+            }
+            return answer;
         }
     }
 }

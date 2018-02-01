@@ -9,14 +9,22 @@ namespace Exercises
     public partial class Exercises
     {
         /*
-         Given three ints, a b c, return true if it is possible to add two of the ints to get the third.
+         Given three ints, a b c, return true if it is
+         possible to add two of the ints to get the third.
          twoAsOne(1, 2, 3) → true
          twoAsOne(3, 1, 2) → true
          twoAsOne(3, 2, 2) → false
          */
         public bool TwoAsOne(int a, int b, int c)
         {
-            return false;
+            bool result = false;
+
+            if((a+b) == c || (b+c) == a || (c+a) == b)
+            {
+                result = true;
+            }
+
+            return result;
         }
 
     }

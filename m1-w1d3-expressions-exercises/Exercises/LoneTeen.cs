@@ -9,7 +9,8 @@ namespace Exercises
     public partial class Exercises
     {
         /*
-        We'll say that a number is "teen" if it is in the range 13..19 inclusive. Given 2 int values,
+        We'll say that a number is "teen" if it is in the range 
+        13..19 inclusive. Given 2 int values,
         return true if one or the other is teen, but not both.
         loneTeen(13, 99) → true
         loneTeen(21, 19) → true
@@ -17,7 +18,14 @@ namespace Exercises
         */
         public bool LoneTeen(int a, int b)
         {
-            return false;
+            bool hasTeen = false;
+          
+            if ((a >= 13 && a <= 19) ^ (b >= 13 && b <= 19))
+            {
+                hasTeen = true;
+            }
+
+            return hasTeen;
         }
 
     }
