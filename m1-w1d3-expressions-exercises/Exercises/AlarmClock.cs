@@ -22,6 +22,7 @@ namespace Exercises
          */
         public string AlarmClock(int day, bool vacation)
         {
+<<<<<<< HEAD
             string time = "7:00";
             bool isWeekend = (day == 0 || day == 6);
             if ( isWeekend || vacation == true )
@@ -30,6 +31,22 @@ namespace Exercises
             }
           
             return time;
+=======
+            bool isWeekend = (day > 6) || (day < 1);
+            bool isWeekday = !isWeekend;
+            bool onVacation = vacation;
+
+            if (isWeekend && !onVacation)
+            {
+
+            }
+            else if (isWeekday && onVacation)
+            {
+
+            }
+
+            return "";
+>>>>>>> 6713bbe7c1c089e8d3019333934bfc0393374519
         }
 
     }
