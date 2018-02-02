@@ -10,7 +10,8 @@ namespace Exercises
     {
 
         /*
-         Given an array of ints, return true if the array is length 1 or more, and the first element and
+         Given an array of ints, return true if the array
+         is length 1 or more, and the first element and
          the last element are equal.
          sameFirstLast([1, 2, 3]) → false
          sameFirstLast([1, 2, 3, 1]) → true
@@ -18,7 +19,14 @@ namespace Exercises
          */
         public bool SameFirstLast(int[] nums)
         {
-            return false;
+            bool result = false;
+
+            if(nums.Length > 1 && nums[0] == nums[nums.Length-1])
+            {
+                result = true;
+            }
+
+            return result;
         }
 
     }

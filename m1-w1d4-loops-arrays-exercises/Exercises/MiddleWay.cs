@@ -9,7 +9,8 @@ namespace Exercises
     public partial class Exercises
     {
         /*
-         Given 2 int arrays, a and b, each length 3, return a new array length 2 containing their middle 
+         Given 2 int arrays, a and b, each length 3,
+         return a new array length 2 containing their middle 
          elements.
          middleWay([1, 2, 3], [4, 5, 6]) → [2, 5]
          middleWay([7, 7, 7], [3, 8, 0]) → [7, 8]
@@ -17,7 +18,11 @@ namespace Exercises
          */
         public int[] MiddleWay(int[] a, int[] b)
         {
-            return new int[] { };
+            int[] middleElements = new int[] {
+                a[(a.Length / 2)],
+                b[(b.Length / 2)] };
+
+            return middleElements;
         }
 
     }
