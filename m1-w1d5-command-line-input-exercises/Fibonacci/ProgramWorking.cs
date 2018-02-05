@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Fibonacci
 {
     class Program
@@ -38,15 +39,17 @@ namespace Fibonacci
                 {
                     case 1:
                         Console.WriteLine("Enter how many Fibbonacci numbers you want to display");
-                        long iterations;
-                        long fib = 0;
-                        long prev = 1;
-                        long prevPrev = 1;
-                        long.TryParse(Console.ReadLine(), out iterations);
+                        byte iterations;
+                        decimal fib = 0;
+                        decimal prev = 1;
+                        decimal prevPrev = 1;
+
+                        byte.TryParse(Console.ReadLine(), out iterations);
+
                         Console.WriteLine(fib);
                         Console.WriteLine(prevPrev);
-
                         Console.WriteLine(prev);
+
 
                         for (long i = 2; i < iterations; i++)
                         {
@@ -54,20 +57,15 @@ namespace Fibonacci
                             prevPrev = prev;
                             prev = fib;
                             Console.WriteLine(fib);
-                                                        
                         }
-
                         break;
 
                     case 0:
                         Console.WriteLine("TY COME AGAIN");
                         isRunning = false;
-
                         break;
-
                 }
             }
-
         }
     }
 }

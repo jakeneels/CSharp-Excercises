@@ -25,6 +25,35 @@ namespace DecimalToBinary
 
         static void Main(string[] args)
         {
+            bool isRunning = true;
+            while (isRunning)
+            {
+                int menuSelection;
+                Console.WriteLine("enter 1 to convert binary to int \nenter 0 to quit");
+                int.TryParse(Console.ReadLine() , out menuSelection);
+                switch (menuSelection)
+                {
+
+                    case 1:
+                        Console.WriteLine("Enter a number to be converted to binary");
+                        int value = int.Parse(Console.ReadLine());
+                        Console.WriteLine(Convert.ToString(value, 2));
+                        Console.ReadKey();
+                        Console.Clear();
+                        break;
+
+                    case 0:
+                        isRunning = false;
+                        break;
+
+                    default:
+                        Console.WriteLine("invalid input");
+                        Console.ReadKey();
+                        Console.Clear();
+                        break;
+                }
+            }
         }
     }
 }
+

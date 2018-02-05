@@ -27,9 +27,46 @@ namespace TempConvert
          */
         static void Main(string[] args)
         {
+            bool isRunning = true;
+            while (isRunning)
+            {
+                Console.WriteLine("1: to convert feet to meters");
+                Console.WriteLine("2: to convert meters to feet");
+                Console.WriteLine("0: to quit");
+                int userSelection;
+                int.TryParse(Console.ReadLine(), out userSelection);
 
+                switch (userSelection)
+                {
+                    case 1:
+                        Console.WriteLine("enter number in meters to convert");
+                        double meters;
+                        double.TryParse(Console.ReadLine(), out meters);
+                        Console.WriteLine($" is {meters * 3.2808399} feet enter to continue");
+                        Console.ReadKey();
+                        Console.Clear();
+                        break;
 
+                    case 2:
+                        Console.WriteLine("enter number in feet to convert");
+                        double feet;
+                        double.TryParse(Console.ReadLine(), out feet);
+                        Console.WriteLine($" is {feet * 0.3048} meters enter to continue");
+                        Console.ReadKey();
+                        Console.Clear();
+                        break;
 
+                    case 0:
+                        Console.WriteLine("Quitting");
+                        Console.ReadKey();
+                        isRunning = false;
+                        break;
+
+                    default:
+                        Console.WriteLine("invalid input");
+                        break;
+                }
+            }
         }
     }
 }
