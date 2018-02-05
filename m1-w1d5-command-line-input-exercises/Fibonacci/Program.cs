@@ -25,6 +25,7 @@ namespace Fibonacci
         static void Main(string[] args)
         {
 
+<<<<<<< HEAD
             bool isRunning = true;
             while (isRunning)
             {
@@ -68,6 +69,8 @@ namespace Fibonacci
                 }
             }
 
+=======
+>>>>>>> a873a05563ed7d132cf0077b2e3b4739aed5b06b
         }
     }
 }
