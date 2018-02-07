@@ -18,18 +18,15 @@ namespace Exercises
          */
         public int Last2(string str)
         {
-            //if (str.Length < 2)
-            //    return 0;
-            //var tail = str.Substring(str.Length - 2, 2);
-            //var count = 0;
-            //for (int i = str.Length - 2;  i > 0; i--)
-            //    count += str.Substring(i).StartsWith(tail) ? 1 : 0;
-
-            //if (str == "xxxx")
-            //    count = 2;
-            return str.Substring(0, str.Length - 2).Where((c, i) => str[i] == str[str.Length - 1] && str[i + 1] == str[str.Length - 2]).Count();
-
-
+            int count = 0;
+            for (int i = 0; i < str.Length  - 2; i++)
+            {
+                if(str.Substring(i , 2) == (str.Substring(str.Length - 2)))
+                {
+                    count++;
+                }
+            }
+            return count;
         }
     }
 }
