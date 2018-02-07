@@ -16,7 +16,11 @@ namespace Exercises
          */
         public List<string> Array2List(string[] stringArray)
         {
-            return null;
+            List<string> fruits = new List<string>();
+
+
+
+            return fruits;
         }
 
     }
