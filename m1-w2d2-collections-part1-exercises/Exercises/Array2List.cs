@@ -16,7 +16,15 @@ namespace Exercises
          */
         public List<string> Array2List(string[] stringArray)
         {
+<<<<<<< HEAD
             return stringArray.ToList();
+=======
+            List<string> fruits = new List<string>();
+
+
+
+            return fruits;
+>>>>>>> c9bfa95b21ecfb69ce97203b28de816b71184b4c
         }
 
     }
