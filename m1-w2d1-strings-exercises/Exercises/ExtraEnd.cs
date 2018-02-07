@@ -9,7 +9,8 @@ namespace Exercises
     public partial class StringExercises
     {
         /*
-         Given a string, return a new string made of 3 copies of the last 2 chars of the original string. The string 
+         Given a string, return a new string made of 3 copies of the 
+         last 2 chars of the original string. The string 
          length will be at least 2.
          extraEnd("Hello") → "lololo"
          extraEnd("ab") → "ababab"
@@ -17,7 +18,14 @@ namespace Exercises
          */
         public string ExtraEnd(string str)
         {
-            return null;
+            string lastChars = "";
+
+            lastChars += str[str.Length - 2];
+            lastChars += str[str.Length - 1];
+
+
+            return  lastChars + lastChars + lastChars;
+
         }
     }
 }

@@ -9,15 +9,20 @@ namespace Exercises
     public partial class StringExercises
     {
         /*
-         Given a string, return a version without both the first and last char of the string. The string 
-         may be any length, including 0.
+         Given a string, return a version without both the first and last char of the string. 
+         The string may be any length, including 0.
          withouEnd2("Hello") → "ell"
          withouEnd2("abc") → "b"
          withouEnd2("ab") → ""
          */
         public string WithouEnd2(string str)
         {
-            return null;
+            string result = "";
+            for (int i = 1; i < str.Length - 1; i++)
+            {
+                result += str[i];
+            }
+            return result;
         }
     }
 }

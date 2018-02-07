@@ -17,7 +17,18 @@ namespace Exercises
          */
         public string Left2(string str)
         {
-            return null;
+
+            string front = str.Substring(0, 2);
+            string end = "";
+
+            if (str.Length >= 3)
+                end = str.Substring(2);
+
+            if (str.Length < 2)
+                end = "";
+
+
+            return end + front;
         }
     }
 }

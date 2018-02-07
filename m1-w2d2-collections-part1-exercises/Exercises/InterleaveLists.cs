@@ -18,7 +18,31 @@ namespace Exercises
          */
         public List<int> InterleaveLists(List<int> listOne, List<int> listTwo)
         {
-            return null;
+            Queue<int> q1    = new Queue<int>();
+            Queue<int> q2    = new Queue<int>();
+            List<int> result = new List<int>();
+
+            foreach (var num in listOne)
+            {
+                q1.Enqueue(num);
+            }
+            foreach (var num in listTwo)
+            {
+                q2.Enqueue(num);
+            }
+            for (int i = 0; i < (listOne.Count + listTwo.Count) ; i++)
+            {
+                if((i % 2 == 0 || i == 0) && q1.Count > 0)
+                {
+                    result.Add(q1.Dequeue());
+                }
+                else if (q2.Count > 0)
+                {
+                    result.Add(q2.Dequeue());
+                }
+            }
+
+            return result;
         }
     }
 }

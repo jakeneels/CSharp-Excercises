@@ -17,7 +17,9 @@ namespace Exercises
          */
         public string NonStart(string a, string b)
         {
-            return null;
+            a = a.Remove(0, 1);
+            b = b.Remove(0, 1);
+            return a+b;
         }
     }
 }

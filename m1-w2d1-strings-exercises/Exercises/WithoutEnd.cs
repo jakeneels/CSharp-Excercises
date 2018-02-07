@@ -18,7 +18,12 @@ namespace Exercises
          */
         public string WithoutEnd(string str)
         {
-            return null;
+            string result = "";
+            for (int i = 1; i < str.Length - 1; i++)
+            {
+                result += str[i];
+            }
+            return result;
         }
     }
 }

@@ -16,7 +16,19 @@ namespace Exercises
          */
         public bool EndsLy(string str)
         {
-            return false;
+            bool result = false;
+            string snip = "";
+
+            if (str.Length >= 2)
+            {
+                snip += str[str.Length - 2];
+                snip += str[str.Length - 1];
+            }
+
+            if (snip.ToLower().Contains("ly"))
+                result = true;
+
+            return result;
         }
     }
 }
