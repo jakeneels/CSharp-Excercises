@@ -18,7 +18,13 @@ namespace Exercises
          */
         public Dictionary<string, string> BeginningAndEnding(string[] words)
         {
-            return null;
+            var dict = new Dictionary<string, string>();
+            foreach (var word in words)
+            {
+                dict.Remove(word[0].ToString());
+                dict.Add(word[0].ToString(), word[word.Length - 1].ToString());
+            }
+            return dict;
         }
     }
 }

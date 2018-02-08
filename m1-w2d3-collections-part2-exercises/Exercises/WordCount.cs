@@ -9,11 +9,10 @@ namespace Exercises
     public partial class Exercises
     {
         /*
-         * Given an array of strings, return a Dictionary<string, int> with a key for each different string, with the value the 
+         * Given an array of strings, return a Dictionary<string, int> with a 
+         * key for each different string, with the value the 
          * number of times that string appears in the array.
-         * 
          * ** A CLASSIC **
-         * 
          * wordCount(["ba", "ba", "black", "sheep"]) → {"ba" : 2, "black": 1, "sheep": 1 }
          * wordCount(["a", "b", "a", "c", "b"]) → {"b": 2, "c": 1, "a": 2}
          * wordCount([]) → {}
@@ -22,7 +21,21 @@ namespace Exercises
          */
         public Dictionary<string, int> WordCount(string[] words)
         {
-            return null;
+            var dict = new Dictionary<string, int>();
+            foreach (var word in words)
+            {
+                int count = 0;
+
+                foreach (var checkWord in words)
+                {
+                    if (checkWord == word)
+                        count++;
+                }
+                    dict.Remove(word);
+                    dict.Add(word, count);
+            }
+
+            return dict;
         }
     }
 }

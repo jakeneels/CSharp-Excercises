@@ -82,8 +82,8 @@ namespace Exercises.Tests
 
             expected = new Dictionary<string, int>()
             {
-                {"Peter", 3333 },
-                {"Paul", 1234567890 }
+                {"Peter", 2499 },
+                {"Paul", 925925917 }
             };
 
             actual = exercises.PeterPaulPartnership(new Dictionary<string, int>()
