@@ -18,7 +18,9 @@ namespace Exercises
         {
             List<string> fruits = new List<string>();
 
-
+            fruits = stringArray.ToList();
+            fruits.AddRange(stringArray);
+            string[] arrayOfFruits = fruits.ToArray();
 
             return fruits;
         }
