@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD:m1-w2d4-introduction-to-classes-exercises/CompanyExercise/CompanyExercise.csproj
+>>>>>>> HEAD:m1-w2d4-introduction-to-classes-exercises/CompanyExercise/CompanyExercise.csproj
     <Compile Include="Company.cs" />
     <Compile Include="Classes\Company.cs" />
     <Compile Include="Program.cs" />
