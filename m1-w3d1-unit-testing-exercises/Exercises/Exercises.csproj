@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{81F2CC6E-E2EB-438B-816F-453372DB70F7}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{105DFF01-CA6D-4E9B-A0EC-EF6184791B6D}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CompanyExercise</RootNamespace>
-    <AssemblyName>CompanyExercise</AssemblyName>
+    <RootNamespace>Exercises</RootNamespace>
+    <AssemblyName>Exercises</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,13 +40,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD:m1-w2d4-introduction-to-classes-exercises/CompanyExercise/CompanyExercise.csproj
     <Compile Include="Company.cs" />
     <Compile Include="Classes\Company.cs" />
     <Compile Include="Program.cs" />
+=======
+    <Compile Include="AnimalGroupName.cs" />
+    <Compile Include="CigarParty.cs" />
+    <Compile Include="Lucky13.cs" />
+    <Compile Include="MaxEnd3.cs" />
+    <Compile Include="NonStart.cs" />
+>>>>>>> 8f9efd2ba60d12f8b8ae1089cf85c8dab395137f:m1-w3d1-unit-testing-exercises/Exercises/Exercises.csproj
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
+    <Compile Include="SameFirstLast.cs" />
+    <Compile Include="StringBits.cs" />
+    <Compile Include="WordCount.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BDAB972F-C8F1-4B48-AA60-5133D23F8772}</ProjectGuid>
+    <ProjectGuid>{E3B85BF7-C57E-4575-BD4E-AD30772E4CA0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Exercises.Tests</RootNamespace>
@@ -16,7 +16,6 @@
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -46,45 +45,19 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Classes\CalculatorTests.cs" />
-    <Compile Include="Classes\ProductTests.cs" />
-    <Compile Include="Classes\PersonTests.cs" />
-    <Compile Include="Classes\CompanyTests.cs" />
-    <Compile Include="Classes\DogTests.cs" />
-    <Compile Include="Classes\ShoppingCartTests.cs" />
-    <Compile Include="MethodValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PropertyValidator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CalculatorExercise\CalculatorExercise.csproj">
-      <Project>{28824B22-1DA3-4538-AF35-3ED785A7DD41}</Project>
-      <Name>CalculatorExercise</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CompanyExercise\CompanyExercise.csproj">
-      <Project>{81f2cc6e-e2eb-438b-816f-453372db70f7}</Project>
-      <Name>CompanyExercise</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DogExercise\DogExercise.csproj">
-      <Project>{D6ACD806-331A-4A5F-BD65-17CDF6A50B92}</Project>
-      <Name>DogExercise</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PersonExercise\PersonExercise.csproj">
-      <Project>{59cd4e08-e0de-4bef-bdd0-d6333ff2e06d}</Project>
-      <Name>PersonExercise</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ProductExercise\ProductExercise.csproj">
-      <Project>{5a8139de-935c-4b26-8cf6-908e9fe2224e}</Project>
-      <Name>ProductExercise</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ShoppingCartExercise\ShoppingCartExercise.csproj">
-      <Project>{EB6B3E15-E3EC-412C-BC22-ED948B18CE58}</Project>
-      <Name>ShoppingCartExercise</Name>
+    <ProjectReference Include="..\Exercises\Exercises.csproj">
+      <Project>{105dff01-ca6d-4e9b-a0ec-ef6184791b6d}</Project>
+      <Name>Exercises</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
