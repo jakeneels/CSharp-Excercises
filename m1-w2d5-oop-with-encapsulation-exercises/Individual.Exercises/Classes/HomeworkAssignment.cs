@@ -22,30 +22,30 @@ namespace Individual.Exercises.Classes
         {
             get
             {
-                int grade = (TotalMarks / PossibleMarks) * 100;
+                double grade = ((double)TotalMarks / PossibleMarks) * 100;
                 string letterGrade = "NA";
                 if (PossibleMarks > 0)
                 {
-                    if (((TotalMarks / PossibleMarks) * 100) >= 90)
+                    if ((grade) >= 90)
                     {
                         letterGrade = "A";
                     }
-                    else if (((TotalMarks / PossibleMarks) * 100) < 90 &&
-                             ((TotalMarks / PossibleMarks) * 100) >= 80)
+                    else if ((grade) < 90 &&
+                             (grade) >= 80)
                     {
                         letterGrade = "B";
                     }
-                    else if (((TotalMarks / PossibleMarks) * 100) < 80 &&
-                            ((TotalMarks / PossibleMarks) * 100) >= 70)
+                    else if ((grade) < 80 &&
+                            (grade ) >= 70)
                     {
                         letterGrade = "C";
                     }
-                    else if (((TotalMarks / PossibleMarks) * 100) < 70 &&
-                            ((TotalMarks / PossibleMarks) * 100) >= 60)
+                    else if ((grade) < 70 &&
+                            (grade) >= 60)
                     {
                         letterGrade = "D";
                     }
-                    else if (((TotalMarks / PossibleMarks) * 100) < 60)
+                    else if ((grade) < 60)
                     {
                         letterGrade = "F";
                     }

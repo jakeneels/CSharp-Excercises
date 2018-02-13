@@ -12,31 +12,32 @@ namespace Individual.Exercises.Classes
         public int BookedFirstClassSeats { get; private set; }
         public int BookedCoachSeats { get; private set; }
         public int TotalFirstClassSeats { get; }
-        public int TotalCoachSeats { get; private set; }
+        public int TotalCoachSeats { get; }
         public int AvailableFirstClassSeats { get => TotalFirstClassSeats - BookedFirstClassSeats; }
-        public int AvailibleCoachSeats { get => TotalCoachSeats - BookedCoachSeats; }
+        public int AvailableCoachSeats { get => TotalCoachSeats - BookedCoachSeats; }
 
-        public Airplane()
-        {
-
-        }
+        public Airplane(){  }
         public Airplane(string planeNumber, int totalFirstClassSeats, int totalCoachSeats)
         {
             PlaneNumber = planeNumber;
             TotalFirstClassSeats = totalFirstClassSeats;
             TotalCoachSeats = totalCoachSeats;
         }
-        bool ReserveSeats(bool forFirstClass, int totalNumberOfSeats)
+        public bool ReserveSeats(bool forFirstClass, int totalNumberOfSeats)
         {
-            if (forFirstClass)
+            bool result = false;
+            if (forFirstClass && AvailableFirstClassSeats >= totalNumberOfSeats)
             {
+                result = true;
                 BookedFirstClassSeats += totalNumberOfSeats;
             }
-            else
+            else if (!forFirstClass && AvailableCoachSeats >= totalNumberOfSeats)
             {
+                result = true;
                 BookedCoachSeats += totalNumberOfSeats;
             }
-            return true;
+
+            return result;
         }
     }
 }
