@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechElevator.Classes;
 
 namespace ProductExercise
 {
@@ -15,6 +16,17 @@ namespace ProductExercise
              * in a program. While code you put here must compile, it won't be validated by the automatic
              * testing. We are more focused with the mechanics of implementing the class.
              */
+
+            Product cheerios = new Product()
+            {
+                Name = "cheerios",
+                Price = 0
+            };
+
+            cheerios.WeightInOunces = 12;
+
+            Console.WriteLine($"Name:{cheerios.Name} Price:{cheerios.Price} Weight:{cheerios.WeightInOunces}oz");
+            Console.ReadKey();  
         }
     }
 }
