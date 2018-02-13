@@ -40,6 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+=======
+>>>>>>> HEAD:m1-w2d4-introduction-to-classes-exercises/CompanyExercise/CompanyExercise.csproj
+    <Compile Include="Company.cs" />
+    <Compile Include="Classes\Company.cs" />
+    <Compile Include="Program.cs" />
+=======
+>>>>>>> d4de93f7d10785537d9c0f2cb574f1846140be92
     <Compile Include="AnimalGroupName.cs" />
     <Compile Include="CigarParty.cs" />
     <Compile Include="Lucky13.cs" />
