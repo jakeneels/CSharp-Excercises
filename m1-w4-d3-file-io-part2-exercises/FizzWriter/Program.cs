@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace FizzWriter
 {
@@ -10,6 +11,14 @@ namespace FizzWriter
     {
         static void Main(string[] args)
         {
+            string directory = Environment.CurrentDirectory + "\\..\\../TestQuestionsAndAnswers.txt";
+
+            using (StreamWriter writer = new StreamWriter())
+            {
+
+            }
+
+
         }
     }
 }
