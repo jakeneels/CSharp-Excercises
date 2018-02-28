@@ -13,6 +13,9 @@
 -- The results should be ordered alphabetically by state name and then by city 
 -- name. 
 -- (19 rows)
+select (name + ', ' + district)as name_and_state, population from city 
+where district IN('Pennsylvania', 'West Virginia', 'Kentucky', 'Indiana', 'Michigan')
+order by district asc, name asc
 
 -- 2. The name, country code, and region of all countries in Africa.  The name and
 -- country code should be returned as a single column named country_and_code 
