@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+    var prev = 1;
+    var prevprev = 1;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Fibonacci</title>
+</head>
+<body>
+    <div>
+
+        <ol>
+            <li>1</li>
+            <li>1</li>
+            @for (var i = 0; i < 23; i++)
+            {
+                int sum = prev + prevprev;
+                <li>@sum</li>
+                prevprev = prev;
+                prev = sum;
+            }
+        </ol>
+    </div>
+</body>
+</html>
