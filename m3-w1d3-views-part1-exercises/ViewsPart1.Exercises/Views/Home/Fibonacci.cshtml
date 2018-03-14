@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+    var num1 = 1;
+    var num2 = 1;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Fibonacci</title>
+</head>
+<body>
+    <div>
+
+        <ol>
+            <li>1</li>
+            <li>1</li>
+            @for (int i = 0; i < 22; i++)
+            {
+                int sum = num1 + num2;
+
+                if (i == 0)
+                {
+                    <li>@sum</li>
+                }
+                num2 = num1;
+             num1 = sum;
+              <li>@sum</li>
+
+            }
+        </ol>
+    </div>
+</body>
+</html>

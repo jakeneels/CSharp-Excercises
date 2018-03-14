@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+
+    string word = Request.QueryString["word"];
+    string strCount = Request.QueryString["count"];
+
+    int count = 0;
+}
+
+<doctype html/>
+<header>
+
+</header>
+
+<body>
+    @if (int.TryParse(strCount, out count) && word != null && word != "")
+    {
+        for (int i = 50; i > 50 - count; i--)
+        {
+            <p style="font-size:@i">@word</p>
+        }
+    }
+    else
+    {
+      <h2>Invalid input, params are count & word</h2>
+    }
+</body>

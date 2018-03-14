@@ -1,0 +1,42 @@
+insert into department(departmentID, name)
+values('Human Relations')
+insert into department(departmentID, name)
+values('Marketing')
+insert into department(departmentID, name)
+values('Production')
+insert into department(departmentID, name)
+values('Accounting')
+
+insert into project(projectID, name, start_date, departmentID)
+values('Operation Wrath Hog', convert(date, '2014-08-21'), 2) -- 1
+insert into project(projectID, name, start_date, departmentID)
+values('Operation Leprecorn Trap', convert(date, '2016-02-13'), 4) --2
+insert into project(projectID, name, start_date, departmentID) 
+values('Operation Amish Jam', convert(date, '2014-03-29'), 4) -- 3
+insert into project(projectID, name, start_date, departmentID)
+values('Operation Voodoo Clam', convert(date, '2017-10-01'), 3) --4
+insert into project(projectID, name, start_date, departmentID)
+values('Operation Solar Cheese', convert(date, '2017-06-17'), 3) --5
+insert into project(projectID, name, start_date, departmentID)
+values('Operation Florished Pinky', convert(date, '2011-06-17'), 1) --6
+
+insert into employee(ID, title, name_first, name_last, gender, birthday, hire_date, departmentID, projectID)
+values('Reports Dress Code Violations', 'Alanis', 'Morisette', 'female', convert(date,'1976-05-20'), 1)
+insert into employee(ID, title, name_first, name_last, gender, birthday, hire_date, departmentID, projectID)
+values('PowerPoint Guru', 'Seth', 'Rogan', 'male', convert(date,'1988-10-12'), 1)
+insert into employee(ID, title, name_first, name_last, gender, birthday, hire_date, departmentID, projectID)
+values('Skin-Tight Neoprene Vest Wearer', 'Burt', 'Reynolds', 'manly', convert(date,'1969-03-22'), 2)
+insert into employee(ID, title, name_first, name_last, gender, birthday, hire_date, departmentID, projectID)
+values('Rolls Jean Legs Up', 'Reginald', 'HammerCock', 'male', convert(date,'1990-01-11'), 2)
+insert into employee(ID, title, name_first, name_last, gender, birthday, hire_date, departmentID, projectID)
+values('Spends Most of the Day on FB, Considered Leadership Material by Upper Management', 'Michael', 'Vick', 'male', convert(date,'1992-06-09'), 3)
+insert into employee(ID, title, name_first, name_last, gender, birthday, hire_date, departmentID, projectID)
+values('Sold Soul for Last Promotion', 'Harry', 'Potter', 'male', convert(date,'1970-02-04'), 3)
+insert into employee(ID, title, name_first, name_last, gender, birthday, hire_date, departmentID, projectID)
+values('Was Absolutely Terrible in his Last Starwars Film', 'Harrison', 'Ford', 'male', convert(date,'1965-03-25'), 3)
+insert into employee(ID, title, name_first, name_last, gender, birthday, hire_date, departmentID, projectID)
+values('Longs to Fulfil his Dream of being a SQL Admin', 'Jake', 'Neels', 'male', convert(date,'1990-05-20'), 3)
+insert into employee(ID, title, name_first, name_last, gender, birthday, hire_date, departmentID, projectID)
+values('Married to Bosses Niece', 'Liam', 'Neeson', 'male', convert(date,'1981-06-19'), 4)
+insert into employee(ID, title, name_first, name_last, gender, birthday, hire_date, departmentID, projectID)
+values('Dao of bad movies', 'Steven', 'Seagul', 'female', convert(date,'1970-02-04'), 4)

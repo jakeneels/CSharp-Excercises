@@ -1,0 +1,56 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FizzBuzz</title>
+    <style>
+        .Fizz {
+            color: blue;
+        }
+
+        .Buzz {
+            color: red;
+        }
+
+        .FizzBuzz {
+            color: purple;
+            font-size: 200%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+
+            @for (var i = 1; i <= 100; i++)
+            {
+                string name = null;
+
+                if (i % 3 == 0 && i % 5 == 0)
+                {
+                    name = "FizzBuzz!";
+                }
+                else if (i % 3 == 0)
+                {
+                    name = "Fizz!";
+                }
+                else if (i % 5 == 0)
+                {
+                    name = "Buzz!";
+                }
+                var css = (name == null) ? "" : name.Replace("!", "");
+
+                <li class="@css">@(name ?? i.ToString())</li>
+                <br/>
+            }
+
+        </ul>
+    </div>
+</body>
+</html>
