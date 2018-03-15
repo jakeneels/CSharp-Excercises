@@ -3,6 +3,7 @@
     Layout = null;
 
     string word = Request.QueryString["word"];
+<<<<<<< HEAD
     string strCount = Request.QueryString["count"];
 
     int count = 0;
@@ -26,3 +27,34 @@
       <h2>Invalid input, params are count & word</h2>
     }
 </body>
+=======
+    string countStr = Request.QueryString["count"];
+
+    int count = 10;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Echo</title>
+</head>
+<body>
+    <div>
+
+        @if (word != null && word.Trim() != "" && int.TryParse(countStr, out count))
+        {
+            for (var i = count; i > 0; i--)
+            {
+                <span style="font-size: @(i)pt;">@word</span><br />
+            }
+        } else
+        {
+            <h2>Please include <code>word</code> and <code>count</code> in your query string, where <code>word</code> is any word and <code>count</code> is an integer.</h2>
+            <a href="Echo?count=25&word=Hello!">Example: Echo?count=25&word=Hello!</a>
+        }
+    </div>
+</body>
+</html>
+>>>>>>> b08332376b7ea18a2dcc744820befe53070de86c

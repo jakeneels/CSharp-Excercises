@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>FizzBuzz</title>
     <style>
+<<<<<<< HEAD
         .Fizz {
             color: blue;
         }
@@ -22,10 +23,16 @@
             color: purple;
             font-size: 200%;
         }
+=======
+        .fizz { color: blue; }
+        .buzz { color: red; }
+        .fizzBuzz {color: purple; font-size: 200%; }
+>>>>>>> b08332376b7ea18a2dcc744820befe53070de86c
     </style>
 </head>
 <body>
     <div>
+<<<<<<< HEAD
         <ul>
 
             @for (var i = 1; i <= 100; i++)
@@ -51,6 +58,30 @@
             }
 
         </ul>
+=======
+
+        @for (var i = 1; i <= 100; i++)
+        {
+
+            if (i % 3 == 0 && i % 5 == 0)
+            {
+            <span class="fizzBuzz">FizzBuzz!</span>
+            }
+            else if (i % 3 == 0)
+            {
+                <span class="fizz">Fizz!</span>
+            }
+            else if (i % 5 == 0)
+            {
+                <span class="buzz">Buzz!</span>
+            }
+            else
+            {
+                <span>@i</span>
+            }
+            <br />
+        }
+>>>>>>> b08332376b7ea18a2dcc744820befe53070de86c
     </div>
 </body>
 </html>

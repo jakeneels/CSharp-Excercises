@@ -1,8 +1,13 @@
 ﻿
 @{
     Layout = null;
+<<<<<<< HEAD
     var num1 = 1;
     var num2 = 1;
+=======
+    var prev = 1;
+    var prevprev = 1;
+>>>>>>> b08332376b7ea18a2dcc744820befe53070de86c
 }
 
 <!DOCTYPE html>
@@ -18,6 +23,7 @@
         <ol>
             <li>1</li>
             <li>1</li>
+<<<<<<< HEAD
             @for (int i = 0; i < 22; i++)
             {
                 int sum = num1 + num2;
@@ -30,6 +36,14 @@
              num1 = sum;
               <li>@sum</li>
 
+=======
+            @for (var i = 0; i < 23; i++)
+            {
+                int sum = prev + prevprev;
+                <li>@sum</li>
+                prevprev = prev;
+                prev = sum;
+>>>>>>> b08332376b7ea18a2dcc744820befe53070de86c
             }
         </ol>
     </div>
