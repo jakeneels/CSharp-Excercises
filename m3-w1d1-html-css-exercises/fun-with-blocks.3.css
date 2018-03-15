@@ -6,6 +6,7 @@ html {
   padding: 50px;
   width: 70px;
   float: left;
+  clear: both;
   position: relative;
 
 }
@@ -16,40 +17,33 @@ html {
   background-color: #44accf;
 }
 #box_0{
-  left: 50%;
-  clear: right;
+
 }
 #box_1{
-  left: 38%;
-  clear:left;
+  left: 11.5%;
 }
 #box_2{
-  left:38%;
-  clear: right;
+  left: 23%;
 }
 #box_3{
-  left: 27.5%;
-  clear: left;
+  left: 34.5%;
 }
 #box_4{
-  left: 27.5%;
+  left: 46%;
 }
 #box_5{
-  left: 27.5%;
-  clear: right;
+  left: 46%;
 }
 #box_6{
-  left: 20%;
-  clear: left;
+  left: 34.5%;
 }
 #box_7{
-  left: 20%;
+  left: 23%;
 }
 #box_8{
-  left: 20%;
+  left: 11.5%;
 }
 #box_9{
-  left: 20%;
-  clear: right;
+  
 }
 
