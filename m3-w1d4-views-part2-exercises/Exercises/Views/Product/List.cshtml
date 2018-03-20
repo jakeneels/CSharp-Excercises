@@ -1,0 +1,99 @@
+﻿@using Exercises.Models
+@model List<Product>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Toy Department</title>
+    <style>
+        .list {
+            width: auto;
+        }
+
+        .toy {
+            padding-top: 25px;
+            padding-bottom: 25px;
+            border-bottom: solid 1px grey;
+        }
+
+        .red {
+            color: darkred;
+        }
+
+        .bestSeller {
+            font-weight: bold;
+        }
+
+        .large {
+            font-size: 22px;
+        }
+
+        .clearR {
+            clear: both;
+        }
+
+        .productImg {
+            width: 200px;
+            float: left;
+        }
+
+        .ratingimg {
+            width: 140px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="list">
+
+        @foreach (var toy in Model)
+        {
+
+            <div class="toy">
+                <img class="productImg" src="~/Content/images/@(toy.ImageName)" />
+
+                @if (toy.IsTopSeller)
+                {
+                    <span class="large">@toy.Name</span>
+                    <span class="red bestSeller clearR">BEST SELLER!</span>
+                }
+                else
+                {
+                    <span class="large clearR">@toy.Name</span>
+                }
+                <br />
+                <span>by @toy.Manufacturer </span><br />
+                <span class="large red">$@toy.Price</span><br />
+                <b>Weight:</b> @toy.WeightIbLbs lbs<br />
+
+                @if (toy.AverageRating >= 4.5)
+                {
+                    <img class="ratingimg" src="~/Content/images/5-star.png" />
+                }
+                @if (toy.AverageRating >= 3.5 && toy.AverageRating < 4.5)
+                {
+                    <img class=" ratingimg" src="~/Content/images/4-star.png" />
+                }
+                @if (toy.AverageRating >= 2.5 && toy.AverageRating < 3.5)
+                {
+                    <img class=" ratingimg" src="~/Content/images/3-star.png" />
+                }
+                @if (toy.AverageRating >= 1.5 && toy.AverageRating < 2.5)
+                {
+                    <img class=" ratingimg" src="~/Content/images/2-star.png" />
+                }
+                @if (toy.AverageRating >= 0 && toy.AverageRating < 1.5)
+                {
+                    <img class=" ratingimg" src="~/Content/images/1-star.png" />
+                }
+            </div>
+
+        }
+    </div>
+</body>
+</html>

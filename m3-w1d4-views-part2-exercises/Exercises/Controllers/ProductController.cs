@@ -7,36 +7,37 @@ using System.Web.Mvc;
 
 namespace Exercises.Controllers
 {
-    public class ProductController : Controller
+  public class ProductController : Controller
+  {
+    // GET: Product/List
+    public ActionResult List()
     {
-        // GET: Product/List
-        public ActionResult List()
-        {
-            return View("List", GetProductsForDisplay());
-        }
+      return View("List", GetProductsForDisplay());
+    }
 
-        // GET: Product/Tile
-        public ActionResult Tile()
-        {
-            return View("Tile", GetProductsForDisplay());
-        }
+    // GET: Product/Tile
+    public ActionResult Tile()
+    {
+      return View("Tile", GetProductsForDisplay());
+    }
 
-        // GET: Product/Table
-        public ActionResult Table()
-        {
-            return View("Table", GetProductsForDisplay());
-        }
+    // GET: Product/Table
+    public ActionResult Table()
+    {
+      return View("Table", GetProductsForDisplay());
+    }
 
-        public ActionResult Detail(string id)
-        {
-            var product = GetProductsForDisplay().Find(p => p.ProductId == id.ToUpper());
-            return View("Detail", product);
-        }
+    public ActionResult Detail(string id)
+    {
+      id = "SKU-1234";
+      Product product = GetProductsForDisplay().Find(p => p.ProductId == id.ToUpper());
 
+      return View("Detail", product);
+    }
 
-        private List<Product> GetProductsForDisplay()
-        {
-            return new List<Product>
+    private List<Product> GetProductsForDisplay()
+    {
+      return new List<Product>
             {
                 new Product() { AverageRating = 4.4, ImageName="toy-balls.jpg", IsTopSeller=true, Manufacturer="Safe Kidz Toys", Name= "Stackable Balls", Price = 24.99, ProductId = "SKU-1234", RemainingStock = 5, WeightIbLbs= 2.0, Description = "The safest stackable balls for a baby. GIFT Ready, reduce teething injury, and sharpen your child's mind!" },
                 new Product() { AverageRating = 3.4, ImageName="toy-car.jpg", IsTopSeller=false, Manufacturer="Safe Kidz Toys", Name= "Push and Pull Car", Price = 8.99, ProductId = "SKU-2345", RemainingStock = 5, WeightIbLbs= 2.0, Description = "Buckle up, because the Green Toys Race Car is ready to roll. Built in the USA from 100% recycled materials." },
@@ -46,7 +47,6 @@ namespace Exercises.Controllers
                 new Product() { AverageRating = 4.7, ImageName="toy-tricycle.jpg", IsTopSeller=true, Manufacturer="Safe Kidz Toys", Name= "My First Trike", Price = 24.99, ProductId = "SKU-5566", RemainingStock = 11, WeightIbLbs= 17.0, Description = "This Tricycle won Parents Choice Classic Award, Parents Guide to Children's Media Award, The National parenting Centers Seal of Approval. A controlled turning radius and low center of gravity make this tricycle easy for little ones to ride. The sturdy steel design and rubber tires make this tricycle durable." },
 
             };
-        }
-
     }
+  }
 }

@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <style>
+
+        .table {
+            display: inline-block;
+        }
+
+        .col {
+            position: relative;
+            display: block;
+            float: left;
+            text-align: center;
+            font-size: 0px;
+            height:300px;
+        }
+
+        .row {
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-right: 15px;
+            padding-left: 15px;
+            clear: right;
+            font-size: 1rem;
+        }
+
+        .odd {
+            background-color: lightgray;
+        }
+
+        .info{
+            display:inline-block;
+            height:66%;
+            position:inherit;
+        }
+
+        .imgContainer {
+            display:block;
+            height: 33%;
+            position: inherit;
+            top: 0;
+        }
+
+        .productImg {
+            width: 100%;
+            height:200%;
+        }
+
+        .imgDiv {
+            display: inline-block;
+            left: 0;
+            position: absolute;
+            width: 100%;
+            height: auto;
+        }
+
+        #blankimg {
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding-bottom: 10px;
+            padding-right: 5px;
+            padding-left: 5px;
+        }
+
+        .ratingimg {
+            padding-right: 5px;
+            padding-left: 5px;
+            max-width: 80px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        body {
+            height: auto;
+        }
+
+        #top {
+            padding: 10px;
+        }
+        .rowNames{
+            float:left;
+            display:inline-block;
+            position:inherit;
+            top:100px;     
+        }
+    </style>
+
+    <title></title>
+</head>
+<body>
+    <div class="table">
+        <h1>Toys</h1>
+        <div class="col">
+
+                <div class="imgContainer" id="blankimg">        </div>
+                <div class="info rowNames">
+                    <div class="row ">Name                      </div>
+                    <div class="row ">Rating                     </div>
+                    <div class="row ">Mfr              </div>
+                    <div class="row ">Price              </div>
+                    <div class="row ">wt (in lbs)                    </div>
+                </div>
+        </div>
+
+        @foreach (var toy in Model)
+        {
+            <div class="col">
+                <div class="imgContainer">
+                    <a href="@Url.Action( "Detail", "Product", new { id = toy.ProductId }, null)">
+
+                        <div class="imgDiv"><img class="productImg" src="~/Content/images/@(toy.ImageName)" /> </div>
+                    </a>
+                </div>
+                <div class="info">
+                    <div class="row odd top">@Html.ActionLink((string)toy.Name, "Detail", "Product", new { id = toy.ProductId }, null) </div>
+                    <div class="row even">
+                        @if (toy.AverageRating >= 4.5)
+                        {
+                            <img class="ratingimg" src="~/Content/images/5-star.png" />
+                        }
+                        @if (toy.AverageRating >= 3.5 && toy.AverageRating < 4.5)
+                        {
+                            <img class="ratingimg" src="~/Content/images/4-star.png" />
+                        }
+                        @if (toy.AverageRating >= 2.5 && toy.AverageRating < 3.5)
+                        {
+                            <img class="ratingimg" src="~/Content/images/3-star.png" />
+                        }
+                        @if (toy.AverageRating >= 1.5 && toy.AverageRating < 2.5)
+                        {
+                            <img class="ratingimg" src="~/Content/images/2-star.png" />
+                        }
+                        @if (toy.AverageRating >= 0 && toy.AverageRating < 1.5)
+                        {
+                            <img class="ratingimg" src="~/Content/images/1-star.png" />
+                        }
+                    </div>
+
+                    <div class="row odd"> @toy.Manufacturer                           </div>
+                    <div class="row even">@toy.Price                  </div>
+                    <div class="row odd">@toy.WeightIbLbs       </div>
+
+
+                </div>
+            </div>
+        }
+
+    </div>
+
+</body>
+</html>
