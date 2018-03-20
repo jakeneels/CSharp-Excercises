@@ -112,9 +112,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Ingredient.cs" />
+    <Compile Include="Models\Old\Ingredient.cs" />
     <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\Recipe.cs" />
+    <Compile Include="Models\Old\Recipe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +124,8 @@
     <Content Include="Views\Product\List.cshtml" />
     <Content Include="Views\Product\Table.cshtml" />
     <Content Include="Views\Product\Tile.cshtml" />
+    <Content Include="Views\Product\Detail.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

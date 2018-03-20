@@ -29,7 +29,7 @@ namespace Exercises.Controllers
 
     public ActionResult Detail(string id)
     {
-      id = "SKU-1234";
+      
       Product product = GetProductsForDisplay().Find(p => p.ProductId == id.ToUpper());
 
       return View("Detail", product);

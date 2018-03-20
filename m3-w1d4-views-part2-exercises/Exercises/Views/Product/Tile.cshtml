@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -35,7 +38,7 @@
             display: inline-block;
             height: 50%;
             position: inherit;
-            top:190px;
+            top: 190px;
         }
 
         .imgContainer {
@@ -43,7 +46,7 @@
             height: 33%;
             position: inherit;
             top: 0;
-            max-width:270px;
+            max-width: 270px;
         }
 
         .productImg {
@@ -113,6 +116,7 @@
             float: left;
             clear: left;
         }
+       
     </style>
 
     <title></title>
@@ -123,51 +127,52 @@
     @{
         int count = 0;
     }
-
-    @foreach (var toy in Model)
+    <div class="table">
+        @foreach (var toy in Model)
     {
         if (count % 3 == 0)
         {
             <div class="clear"></div>
+    }
+    <div class="col">
+        <div class="imgContainer">
+
+            <a href="@Url.Action("Detail", "Product", new { id = toy.ProductId }, null)">
+                <div class="imgDiv"><img class="productImg" src="~/Content/images/@(toy.ImageName)" /> </div>
+            </a>
+        </div>
+        <div class="info">
+            <div class="row top">@Html.ActionLink((string)toy.Name, "Detail", "Product", new { id = toy.ProductId }, null) </div>
+            <div class="row"> @toy.Manufacturer                     </div>
+            <div class="row red large">$@toy.Price                  </div>
+            <div class="row"><b>Weight</b> @toy.WeightIbLbs lbs     </div>
+            <div class="row">
+                @if (toy.AverageRating >= 4.5)
+            {
+                <img class="ratingimg" src="~/Content/images/5-star.png" />
         }
-        <div class="col">
-            <div class="imgContainer">
-                <a href="@Url.Action("Detail", "Product", new { id = toy.ProductId }, null)">
-                    <div class="imgDiv"><img class="productImg" src="~/Content/images/@(toy.ImageName)" /> </div>
-                </a>
-            </div>
-            <div class="info">
-                <div class="row top">@Html.ActionLink((string)toy.Name, "Detail", "Product", new { id = toy.ProductId }, null) </div>
-                <div class="row"> @toy.Manufacturer                     </div>
-                <div class="row red large">$@toy.Price                  </div>
-                <div class="row"><b>Weight</b> @toy.WeightIbLbs lbs     </div>
-                <div class="row">
-                    @if (toy.AverageRating >= 4.5)
-                    {
-                        <img class="ratingimg" src="~/Content/images/5-star.png" />
-                    }
-                    @if (toy.AverageRating >= 3.5 && toy.AverageRating < 4.5)
-                    {
-                        <img class="ratingimg" src="~/Content/images/4-star.png" />
-                    }
-                    @if (toy.AverageRating >= 2.5 && toy.AverageRating < 3.5)
-                    {
-                        <img class="ratingimg" src="~/Content/images/3-star.png" />
-                    }
-                    @if (toy.AverageRating >= 1.5 && toy.AverageRating < 2.5)
-                    {
-                        <img class="ratingimg" src="~/Content/images/2-star.png" />
-                    }
-                    @if (toy.AverageRating >= 0 && toy.AverageRating < 1.5)
-                    {
-                        <img class="ratingimg" src="~/Content/images/1-star.png" />
-                    }
-                </div>
+                @if (toy.AverageRating >= 3.5 && toy.AverageRating < 4.5)
+            {
+                <img class="ratingimg" src="~/Content/images/4-star.png" />
+        }
+                @if (toy.AverageRating >= 2.5 && toy.AverageRating < 3.5)
+            {
+                <img class="ratingimg" src="~/Content/images/3-star.png" />
+        }
+                @if (toy.AverageRating >= 1.5 && toy.AverageRating < 2.5)
+            {
+                <img class="ratingimg" src="~/Content/images/2-star.png" />
+        }
+                @if (toy.AverageRating >= 0 && toy.AverageRating < 1.5)
+            {
+                <img class="ratingimg" src="~/Content/images/1-star.png" />
+        }
             </div>
         </div>
-        count++;
-
-    }
+    </div>
+count++;
+}
+    </div>
 
 
 
