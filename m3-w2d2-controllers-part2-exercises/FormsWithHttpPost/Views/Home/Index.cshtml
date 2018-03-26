@@ -1,0 +1,79 @@
+﻿@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<FormsWithHttpPost.Models.Review>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            background-color: white;
+        }
+
+        h1 {
+            text-align: left;
+           
+        }
+
+      
+
+            .post:nth-child(3) {
+                background-color: lightgray;
+            }
+
+        .title {
+            display:block;
+            font-weight: bolder;
+            font-size: 16px;
+        }
+        img .rating {
+            display: inline-block;
+            float:right
+        }
+
+        .review-text {
+            padding-left: 10px;
+        }
+
+        .message {
+            padding-top: 15px;
+            padding-bottom:20px;
+        }
+        img .main{
+            float:left;
+            width:15%;
+              
+        }
+        
+    </style>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <img class="img" src="~/Content/forDummies.png" />
+        <h1> Past Reviews</h1> <h4>@Html.ActionLink("Submit a review", "NewReview")</h4>
+   
+
+    @foreach (var review in Model)
+    {
+        <div class="review">
+            <div class="review-text">
+                <div class="title"> @review.Title  <span> @review.Rating</span><img class="rating " src="~/Content/star.png" /></div><br />
+
+                by @review.Username on @review.ReviewDate.ToShortDateString()<br />
+               
+
+                <div class="message"> @review.Message</div>
+            </div>
+        </div>
+
+    }
+
+    </div>
+
+</body>
+</html>

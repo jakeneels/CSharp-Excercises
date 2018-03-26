@@ -1,0 +1,53 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <style>
+
+        .container {
+            padding-left: 40px;
+            position: relative;
+            left: 50px;
+            float: left;
+        }
+
+        .input {
+            padding-right: 30px;
+        }
+
+        .text {
+            text-align: right !important;
+        }
+
+        button {
+            position: relative;
+            right: 70px !important;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+
+<body>
+    <h2> New Book Review</h2>
+    <div class="container">
+        <form method="post" action="@Url.Action("NewReview","Review")">
+            <br />
+            <div class="text">Enter your username  <input type="text" name="Username" /></div><br />
+            <div class="text"> How many stars? <input type="number" class="text" name="Rating" /></div><br />
+            <div class="text">Provide a title <input type="text" class="text" name="Title" /> </div><br />
+            <div class="text"> Review <input type="text" class="text" name="Message" /></div><br />
+            <button type="submit">  Submit! </button>
+
+
+        </form>
+
+    </div>
+</body>
+</html>
+
