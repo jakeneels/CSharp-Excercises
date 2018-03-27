@@ -129,8 +129,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Actor.cs" />
+    <Compile Include="Models\ActorSearchModel.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Film.cs" />
+    <Compile Include="Models\FilmSearchModel.cs" />
+    <Compile Include="Models\IndexData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +145,14 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Film\Index.cshtml" />
+    <Content Include="Views\Actor\Index.cshtml" />
+    <Content Include="Views\Actor\SearchResult.cshtml" />
+    <Content Include="Views\Film\SearchResult.cshtml" />
+    <Content Include="Views\Shared\FilmSearch.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Customer\SearchResult.cshtml" />
+    <Content Include="Views\Shared\CustSearch.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -151,9 +162,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Actor\" />
-    <Folder Include="Views\Customer\" />
-    <Folder Include="Views\Film\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

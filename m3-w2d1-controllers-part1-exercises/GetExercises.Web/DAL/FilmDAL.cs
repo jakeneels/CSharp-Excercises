@@ -17,7 +17,8 @@ namespace GetExercises.Web.DAL
             this.connectionString = connectionString;
         }
 
-        public IList<Film> GetFilmsBetween(string genre, int minLength, int maxLength)
+
+        public IList<Film> GetFilmsBetween(string genre, int maxLength, int minLength)
         {
             IList<Film> films = new List<Film>();
 
@@ -26,7 +27,7 @@ namespace GetExercises.Web.DAL
                 JOIN category ON category.category_id = film_category.category_id
                 WHERE category.name = @category_name AND length BETWEEN @minLength AND @maxLength";
 
-            using(SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
 
@@ -45,7 +46,30 @@ namespace GetExercises.Web.DAL
             return films;
         }
 
-        private Film MapRowToFilm(SqlDataReader reader)
+        public IList<string> GetCategoryNames()
+        {
+            IList<string> categoryNames = new List<string>();
+            string categoryNameSql = @"Select category.name from category";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(categoryNameSql, conn);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    categoryNames.Add(reader["name"].ToString());
+                }
+
+            }
+                return categoryNames;
+
+            
+        }
+
+            private Film MapRowToFilm(SqlDataReader reader)
         {
             return new Film()
             {
@@ -56,5 +80,6 @@ namespace GetExercises.Web.DAL
                 Rating = Convert.ToString(reader["rating"])
             };
         }
+
     }
 }

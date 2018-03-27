@@ -25,20 +25,39 @@ namespace GetExercises.Web.Controllers
         /// The request to display an empty search page.
         /// </summary>
         /// <returns></returns>
-        public ActionResult Index()
+        public ActionResult Index( IndexData model)
         {
-            return null;
+
+            model.Categorys = dal.GetCategoryNames();
+
+            return View("Index", model);
         }
+
+        //public ActionResult Index(FilmSearchModel searchModel)
+        //{
+        //    IndexData model = new IndexData();
+
+        //    model.Categorys = dal.GetCategoryNames();
+        //    model.Films = dal.GetFilmsBetween(searchModel.Genre, searchModel.MaxLength, searchModel.MinLength);
+
+        //    return View("Index", model);
+        //}
 
         /// <summary>
         /// Receives the search result request and goes to th database looking for the information.
         /// </summary>
         /// <param name="request">A request model that contains the search parameters.</param>
         /// <returns></returns>
-        public ActionResult SearchResult(/*FilmSearch request */)
+        /// 
+        public ActionResult SearchResult(FilmSearchModel searchModel)
         {
-            /* Call the DAL and pass the values as a model back to the View */
-            return null;
+            IndexData model = new IndexData();
+
+            model.Films = dal.GetFilmsBetween(searchModel.Genre, searchModel.MaxLength, searchModel.MinLength);
+            model.Categorys = dal.GetCategoryNames();
+
+            return View("SearchResult", model);
         }
+
     }
 }

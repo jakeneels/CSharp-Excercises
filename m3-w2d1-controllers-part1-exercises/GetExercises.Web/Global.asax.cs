@@ -27,7 +27,7 @@ namespace GetExercises.Web
         {
             var kernel = new StandardKernel();
 
-            string connectionString = @""; //TODO: Insert Connection String to your database
+            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["DB"].ConnectionString;
 
             kernel.Bind<IFilmDAL>().To<FilmDAL>().WithConstructorArgument("connectionString", connectionString);
             kernel.Bind<IActorDAL>().To<ActorDAL>().WithConstructorArgument("connectionString", connectionString);

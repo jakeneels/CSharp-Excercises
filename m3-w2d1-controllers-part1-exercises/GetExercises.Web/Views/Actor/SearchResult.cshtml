@@ -1,0 +1,23 @@
+﻿
+@using GetExercises.Web.Models;
+@model IList<Actor>
+
+<h2> Actor Search</h2>
+
+  Last Name: <br />
+<input type="text" name="LastName" />
+<button> Search</button><br />
+          Name
+
+<table>
+    @foreach (var actor in Model)
+    {
+        <tr>
+            <td>@actor.LastName</td>
+            <td>@actor.FirstName</td>
+
+        </tr>
+    }
+
+
+</table>

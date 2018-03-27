@@ -20,6 +20,17 @@ namespace GetExercises.Web.Controllers
         {
             this.dal = dal;
         }
-        
+
+        public ActionResult Index()
+        {
+            return View("Index");
+        }
+
+        public ActionResult SearchResult(string name, string orderBy)
+        {
+            var model = dal.SearchForCustomers(name, orderBy);
+
+            return View("SearchResult", model);
+        }
     }
 }

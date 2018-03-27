@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.WebPages;
 
 namespace GetExercises.Web.Controllers
 {
@@ -27,7 +28,7 @@ namespace GetExercises.Web.Controllers
         /// <returns></returns>
         public ActionResult Index()
         {
-            return View();
+            return View("Index");
         }
 
         /// <summary>
@@ -35,10 +36,21 @@ namespace GetExercises.Web.Controllers
         /// </summary>
         /// <param name="request">A request model that contains the search parameters.</param>
         /// <returns></returns>
-        public ActionResult SearchResult(/*ActorSearch request */)
+        
+        public ActionResult SearchResult()
         {
+      List<Actor> model = new List<Actor>();
+      var query = HttpContext.Request.QueryString;
+      var qs = query.GetValues("LastName");
+
+      var actor = dal.FindActors(qs[0]);
+            
             /* Call the DAL and pass the values as a model back to the View */
-            return null;
+            return View("SearchResult", actor);
         }
-    }
+
+    
+
+
+  }
 }

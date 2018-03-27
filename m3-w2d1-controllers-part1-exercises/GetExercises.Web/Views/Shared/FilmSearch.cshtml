@@ -1,0 +1,40 @@
+﻿<head>
+    <style>
+        body {
+            display: block;
+        }
+
+        .searchParams {
+            display: inline-block;
+            font-weight: bolder;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Film Search</h2>
+
+    <form method="get" action="@Url.Action("SearchResult","Film")">
+
+        <div class=" searchParams">
+            Minimum Length: <br />
+            <input type="number" name="MinimumLength" />
+        </div>
+        <div class="searchParams">
+            Maximum Length: <br />
+            <input type="number" name="MinimumLength" />
+        </div>
+        <div class=" searchParams">
+
+            Genre:
+            <br /> <select name="Genre">
+                @foreach (string categoryName in Model.Categorys)
+                {
+                    <option value="@categoryName">@categoryName</option>
+                }
+            </select>
+        </div>
+        <button type="submit" class="searchParams"> Search</button><br />
+    </form>
+</body>

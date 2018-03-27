@@ -1,0 +1,69 @@
+﻿
+@using GetExercises.Web.Models;
+@model IndexData
+
+@*@Html.Partial("FilmSearch")*@
+<head>
+    <style>
+        body {
+            display: block;
+        }
+
+        .searchParams {
+            display: inline-block;
+            font-weight: bolder;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Film Search</h2>
+
+    <form method="get" action="@Url.Action("SearchResult","Film")">
+
+        <div class=" searchParams">
+            Minimum Length: <br />
+            <input type="number" name="Minmum Length" />
+        </div>
+        <div class="searchParams">
+            Maximum Length: <br />
+            <input type="number" name="Minmum Length" />
+        </div>
+        <div class=" searchParams">
+
+            Genre:
+            <br /> <select name="Genre">
+                @foreach (string categoryName in Model.Categorys)
+                {
+                    <option value="@categoryName">@categoryName</option>
+                }
+            </select>
+        </div>
+        <button type="submit" class="searchParams"> Search</button><br />
+    </form>
+
+
+
+
+    <div class="container">
+
+        <div class="col-md-2 ">Title</div>
+        <div class="col-md-6 ">Description</div>
+        <div class="col-md-2 ">ReleaseYear</div>
+        <div class="col-md-1 ">Length</div>
+        <div class="col-md-1 ">Rating</div>
+        <br />
+
+        @foreach (var film in Model.Films)
+        {
+            <div class="col-md-2 ">@film.Title</div>
+            <div class="col-md-6 ">@film.Description</div>
+            <div class="col-md-2 ">@film.ReleaseYear</div>
+            <div class="col-md-1 ">@film.Length</div>
+            <div class="col-md-1 ">@film.Rating</div>
+
+        }
+
+    </div>
+</body>

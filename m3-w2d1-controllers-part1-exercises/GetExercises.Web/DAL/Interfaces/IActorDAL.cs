@@ -9,6 +9,7 @@ namespace GetExercises.Web.DAL.Interfaces
 {
     public interface IActorDAL
     {
-        IList<Actor> FindActors(string lastNameSearch);
+
+        List<Actor> FindActors(string lastNameSearch);
     }
 }

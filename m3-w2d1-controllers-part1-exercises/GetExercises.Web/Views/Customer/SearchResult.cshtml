@@ -1,0 +1,37 @@
+﻿@using GetExercises.Web.Models;
+@model IList<Customer>
+
+<body>
+
+    @Html.Partial("CustSearch")
+
+    <div class="container">
+
+        <div class="col-md-4 searchParams">
+            Name
+        </div>
+        <div class="col-md-6 searchParams">
+            Email
+        </div>
+        <div class="col-md-2 searchParams">
+            Active
+        </div>
+
+    </div>
+    @foreach (var cust in Model)
+    {
+        <div class="col-md-4 searchParams">
+            @cust.FirstName, @cust.LastName
+        </div>
+        <div class="col-md-6 searchParams">
+            @cust.Email
+        </div>
+        <div class="col-md-2 searchParams">
+            @cust.IsActive
+        </div>
+
+    }
+
+</body>
+
+
