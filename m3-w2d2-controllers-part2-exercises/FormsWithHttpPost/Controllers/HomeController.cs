@@ -23,9 +23,13 @@ namespace FormsWithHttpPost.Controllers
     {
       return View("NewReview");
     }
+    public ActionResult SaveReview()
+    {
+      return View("SaveReview");
+    }
 
     [HttpPost]
-    public ActionResult NewReview(Review model)
+    public ActionResult SaveReview(Review model)
     {
       ReviewSqlDAL _dal = new ReviewSqlDAL();
       _dal.SaveReview(model);

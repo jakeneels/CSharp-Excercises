@@ -55,8 +55,7 @@ namespace GetExercises.Web.Controllers
 
             model.Films = dal.GetFilmsBetween(searchModel.Genre, searchModel.MaxLength, searchModel.MinLength);
             model.Categorys = dal.GetCategoryNames();
-
-            return View("SearchResult", model);
+        return View("SearchResult", model);
         }
 
     }

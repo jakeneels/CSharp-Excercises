@@ -9,7 +9,7 @@ namespace FormsWithHttpPost.DAL
 {
     public class ReviewSqlDAL : IReviewDAL
     {
-        string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=Squirrels;Integrated Security=True";
+        string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=DB;Integrated Security=True";
 
 
 
@@ -54,7 +54,7 @@ namespace FormsWithHttpPost.DAL
         {
             bool success = false;
 
-            const string InsertReviewSQL = @"INSERT INTO reviews VALUES(@username, @rating, @review_title, @review_text, @getdate())";
+            const string InsertReviewSQL = @"INSERT INTO reviews VALUES(@username, @rating, @review_title, @review_text, @getdate()";
 
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -69,7 +69,7 @@ namespace FormsWithHttpPost.DAL
                     cmd.Parameters.Add(new SqlParameter("@rating", newReview.Rating));
                     cmd.Parameters.Add(new SqlParameter("@review_title", newReview.Title));
                     cmd.Parameters.Add(new SqlParameter("@review_text", newReview.Message));
-                    cmd.Parameters.Add(new SqlParameter("@review_date", newReview.ReviewDate));
+                    //cmd.Parameters.Add(new SqlParameter("@review_date", newReview.ReviewDate));
                     trans.Commit();
 
                     cmd.ExecuteNonQuery();
