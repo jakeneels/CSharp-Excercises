@@ -22,102 +22,39 @@ function democratPresidents() {
   $(".Democratic").addClass("blue");
 }
 
-//Locate all Federalist presidents and add the 'gold' class.
+//Locate all Federalist presidents and add the '
+//gold' class.
 function otherPresidents() {
-  $(".Federalist").addClass("gold");
+  $("#presidents>div").remove(".Democratic").remove(".Republican").addClass("gold");;
+
 }
 
 //Locate all presidents named 'James' and add the 'james' class.
 function presidentsNamedJames() {
-  var h3 = $("#presidents>div h3");
 
-  h3.each(function () {
-    var name = this.innerHTML.toString();
-    if (name[0] == "j" && name[1] == "a" && name[2] == "m" && name[3] == "e" && name[4] == "s") {
-      $(this).addClass("james");
-    }
-    })
-
-  console.warn("pres h3? " + name + " <=")
+  $("#presidents>div:contains('James')").addClass('James');
 
   //$("#presidents>div").addClass("James");
 
 }
 
-//Locate each president serving at the beginning of each century and add the 'beginningOfCentury' class.
+//Locate each president serving at the beginning of 
+//each century and add the 'beginningOfCentury' class.
 function turnOfTheCenturyPresidents() {
-
+  $("#presidents h2").after().addClass("beginningOfCentury");
 }
 
-//Locate each president serving at the end of the century and add the 'endOfCentury' class.
+//Locate each president serving at the end of the 
+//century and add the 'endOfCentury' class.
 function endOfTheCenturyPresidents() {
-    
-  
-
+  $("#presidents h2").before().addClass("endOfCentury");
 }
 
-//Locate all presidents serving in the 1900s who appear on currency and add the 'appearOnCurrency' class.
+//Locate all presidents serving in the 1900s who appear
+//on currency and add the 'appearOnCurrency' class.
 function currencyPresidents() {
-  $(".currency").addClass("appearOnCurrency");
+  $("#presidents h2").after(1990).addClass("appearOnCurrency");
 
 }
 
-$(function () {
 
-  $("#btnPresident").click(function () {
-    console.warn("clicked");
-    presentialDivs();
-
-  });
-
-  $("#btnPresident").click();
-
-  $("#btnFoundingFather").click(function () {
-    console.warn("clicked");
-    georgeWashington();
-
-  });
-
-  $("#btnRepublicans").click(function () {
-    console.warn("clicked");
-    democratPresidents();
-
-  });
-
-  $("#btnDemocrats").click(function () {
-    console.warn("clicked");
-    republicanPresidents();
-
-  });
-
-  $("#btnOther").click(function () {
-    console.warn("clicked");
-    otherPresidents();
-
-  });
-
-  $("#btnJames").click(function () {
-    console.warn("clicked");
-    presidentsNamedJames();
-
-  });
-
-  $("#btnBeginningOfCentury").click(function () {
-    console.warn("clicked");
-    presentialDivs();
-
-  });
-
-  $("#btnEndOfCentury").click(function () {
-    console.warn("clicked");
-    presentialDivs();
-
-  });
-
-  $("#btnAppearOnCurrency").click(function () {
-    console.warn("clicked");
-    presentialDivs();
-
-  });
-
-})
