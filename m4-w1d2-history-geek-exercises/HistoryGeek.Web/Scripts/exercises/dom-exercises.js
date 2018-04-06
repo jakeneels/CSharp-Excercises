@@ -32,7 +32,7 @@ function otherPresidents() {
 //Locate all presidents named 'James' and add the 'james' class.
 function presidentsNamedJames() {
 
-  $("#presidents>div:contains('James')").addClass('James');
+  $("div[id^='james']").addClass('James');
 
   //$("#presidents>div").addClass("James");
 
@@ -54,7 +54,6 @@ function endOfTheCenturyPresidents() {
 //on currency and add the 'appearOnCurrency' class.
 function currencyPresidents() {
   $("#presidents h2").after(1990).addClass("appearOnCurrency");
-
 }
 
 
