@@ -16,8 +16,8 @@ $(document).ready(function () {
     $("#btnPresident").on("click", function (e)
     {
         presentialDivs();
-        
-        if($(".president").length == NUMBER_OF_PRESIDENTS) {
+
+        if ($(".president").length == NUMBER_OF_PRESIDENTS) {
             $("#exercise1").addClass(CSS_CLASS_CORRECT);
         }
         
