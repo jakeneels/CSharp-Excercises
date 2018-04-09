@@ -119,29 +119,30 @@ $(document).ready(function () {
     });
 
     if (shipPrices.length >= 4) {
-      
-      var subTot = parseFloat($("#subtotal>.price").text().replace("$", ""));
 
       if ($("#ShippingType[value='Standard']").is(':checked')) {
-
-        var shippingCost = parseFloat(shipPrices[0].replace("$", ""));
-
-        $("#grandtotal>.price").text(shippingCost + subTot);
+        writePriceSummary(0);
       }
       else if ($("#ShippingType[value='Express']").is(':checked')) {
-        var shippingCost = parseFloat(shipPrices[1].replace("$", ""));
-
-        $("#grandtotal>.price").text(shippingCost + subTot);
+        writePriceSummary(1);
       }
       else if ($("#ShippingType[value='Two-Day']").is(':checked')) {
-        var shippingCost = parseFloat(shipPrices[2].replace("$", ""));
-
-        $("#grandtotal>.price").text(shippingCost + subTot);
+        writePriceSummary(2);
       }
       else if ($("#ShippingType[value='Overnight']").is(':checked')) {
-        var shippingCost = parseFloat(shipPrices[3].replace("$", ""));
+        writePriceSummary(3);     }
+    }
 
-        $("#grandtotal>.price").text(shippingCost + subTot);      }
+    function writePriceSummary(index) {
+
+      var subTot = parseFloat($("#subtotal>.price").text().replace("$", ""));
+      var subWTax = (subTot * 1.08)
+      $("#shipping>.price").text(shipPrices[index]);
+      $("#tax>.price").text("$" + subWTax);
+
+      var shippingCost = parseFloat(shipPrices[index].replace("$", ""));
+      subWTax += shippingCost;
+      $("#grandtotal>.price").text("$" + subWTax);
     }
   });
 });

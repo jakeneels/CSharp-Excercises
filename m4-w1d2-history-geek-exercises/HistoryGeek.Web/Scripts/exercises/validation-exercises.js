@@ -2,7 +2,13 @@
 /// <reference path="../jquery.validate.js" />
 
 $(document).ready(function () {
+  $("#payment-info").validate({
 
+
+
+
+
+  });
    
 });
 
