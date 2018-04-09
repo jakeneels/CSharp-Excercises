@@ -4,6 +4,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<head>
+    <script src="~/Scripts/exercises/event-exerises.js"></script>
+</head>
+
 <h2>Complete your checkout</h2>
 <div id="errorSummary">
     <h3>You have the following errors: </h3>
@@ -11,7 +15,7 @@
 </div>
 @using (Html.BeginForm("Checkout", "Store", FormMethod.Post, new { id = "checkout" }))
 {
-    
+
     <fieldset id="billing-info">
         <h3>Billing Address</h3>
         @Html.TextBoxFor(m => m.BillingAddress1, new { placeholder = "address" })
@@ -31,8 +35,8 @@
         <h3>Shipping Method</h3>
         <p>@Html.RadioButtonFor(m => m.ShippingType, "Standard", new { data_cost = Model.ShippingRates["Standard"].ToString("C") }) <label>Standard Shipping: @Model.ShippingRates["Standard"].ToString("C")</label></p>
         <p>@Html.RadioButtonFor(m => m.ShippingType, "Express", new { data_cost = Model.ShippingRates["Express"].ToString("C") }) <label>Express Shipping: @Model.ShippingRates["Express"].ToString("C")</label></p>
-        <p>@Html.RadioButtonFor(m => m.ShippingType, "Two-Day", new { data_cost = Model.ShippingRates["Two-Day"].ToString("C") }) <label>Two-Day Shipping: @Model.ShippingRates["Two-Day"].ToString("C")</label></p>        
-        <p>@Html.RadioButtonFor(m => m.ShippingType, "Overnight", new { data_cost = Model.ShippingRates["Overnight"].ToString("C") }) <label>Overnight Shipping: @Model.ShippingRates["Overnight"].ToString("C")</label></p>        
+        <p>@Html.RadioButtonFor(m => m.ShippingType, "Two-Day", new { data_cost = Model.ShippingRates["Two-Day"].ToString("C") }) <label>Two-Day Shipping: @Model.ShippingRates["Two-Day"].ToString("C")</label></p>
+        <p>@Html.RadioButtonFor(m => m.ShippingType, "Overnight", new { data_cost = Model.ShippingRates["Overnight"].ToString("C") }) <label>Overnight Shipping: @Model.ShippingRates["Overnight"].ToString("C")</label></p>
     </fieldset>
     <fieldset id="payment-info">
         <h3>Payment</h3>
@@ -50,4 +54,5 @@
     </fieldset>
 
 }
+
 
