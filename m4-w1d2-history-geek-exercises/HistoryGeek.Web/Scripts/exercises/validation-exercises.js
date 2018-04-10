@@ -19,8 +19,6 @@ $(document).ready(function () {
       required: true,
       equalTo: "#Password"
     }
-
-
   })
 
   $("#checkout").validate({
